@@ -1,6 +1,6 @@
 
 function build() {
-    let codeOutput;
+    let codeOutput="";
     let code = document.getElementById("code").value;
 
     const encodedParams = new URLSearchParams();
