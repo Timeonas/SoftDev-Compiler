@@ -6,14 +6,27 @@
 </head>
 <script src="API-Handler.js"></script>
 <body>
-<H1>Code To Be Compiled</H1>
-<label for="code"><textarea id="code" style="width: 700px; height: 300px; resize: none;"></textarea></label>
+<H1>Code To Be Compiled in Python</H1>
+<label for="code"></label><textarea id="code" style="width: 700px; height: 300px; resize: none;"></textarea>
 <div style="position: absolute; left: 514px;">
     <button onclick="build()" style="height: 35px; width: 200px;">Compile</button>
 </div>
-<div id="languageSelector" style="position:absolute; left: 725px; top: 180px;">
-<H3>Language Selected</H3>
-    <p id="Language">Python</p>
+<div id="languageSelector" style="position:absolute; left: 725px; top: 195px;">
+<H3 style="display: inline;">Language Selected: </H3><p id="Language" style="display: inline;">Python</p>
+    <br>
+    <br>
+    <label>Please select a Language:</label>
+    <br>
+    <label for="languages"></label><select name="Languages" id="languages">
+        <option value="">--Please choose an option--</option>
+        <option value="java">Java</option>
+        <option value="py">Python</option>
+        <option value="cpp">C++</option>
+        <option value="c">C</option>
+        <option value="go">GoLang</option>
+        <option value="cs">C#</option>
+        <option value="js">NodeJS</option>
+    </select>
 </div>
 <H1>Code Output</H1>
 <p style="white-space: pre-line;" id='output'></p>

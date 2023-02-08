@@ -1,11 +1,23 @@
 
 function build() {
     let codeOutput="";
+    let language = "";
     let code = document.getElementById("code").value;
+
+    if(code===""){
+        document.getElementById("output").innerHTML = "";
+        return null;
+    }
 
     const encodedParams = new URLSearchParams();
     encodedParams.append("code", code);
-    encodedParams.append("language", "py");
+
+    language = document.getElementById("languages").value;
+    if(language===""){
+        document.getElementById("output").innerHTML = "Please select a language";
+        return null
+    }
+    encodedParams.append("language", language);
 
     const options = {
         method: 'POST',
