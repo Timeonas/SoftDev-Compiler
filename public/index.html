@@ -6,9 +6,15 @@
 </head>
 <script src="API-Handler.js"></script>
 <body>
-<H1>Input</H1>
-<label for="code"><textarea id="code"></textarea></label>
-<button onclick="build()">Compile</button>
+<H1>Code To Be Compiled</H1>
+<label for="code"><textarea id="code" style="width: 700px; height: 300px; resize: none;"></textarea></label>
+<div style="position: absolute; left: 514px;">
+    <button onclick="build()" style="height: 35px; width: 200px;">Compile</button>
+</div>
+<div id="languageSelector" style="position:absolute; left: 725px; top: 180px;">
+<H3>Language Selected</H3>
+    <p id="Language">Python</p>
+</div>
 <H1>Code Output</H1>
 <p style="white-space: pre-line;" id='output'></p>
 </body>
