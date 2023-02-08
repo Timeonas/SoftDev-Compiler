@@ -1,4 +1,6 @@
 
+let text = "";
+
 function build() {
     let codeOutput="";
     let language = "";
@@ -34,6 +36,7 @@ function build() {
         .then(data => {
             console.log(data);
             codeOutput = data.output;
+            document.getElementById("outputDisplay").innerHTML = text;
             if(codeOutput===""&&data.error==="") {
                 document.getElementById("output").innerHTML = "No Output";
             }
@@ -44,4 +47,14 @@ function build() {
                 document.getElementById("output").innerHTML = "Failed to Compile, Error: "+data.error;
         })
         .catch(err => console.error(err));
+}
+
+function select(){
+    let el = document.getElementById("languages");
+     text = el.options[el.selectedIndex].text;
+    if(text==="--Please choose an option--"){
+        document.getElementById("Language").innerHTML = "None";
+        return null;
+    }
+    document.getElementById("Language").innerHTML = text;
 }
