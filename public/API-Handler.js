@@ -4,10 +4,11 @@ let text = "";
 function build() {
     let codeOutput="";
     let language = "";
+    let input = "";
     let code = document.getElementById("code").value;
 
     if(code===""){
-        document.getElementById("output").innerHTML = "";
+        document.getElementById("output").innerHTML = "Please enter code";
         return null;
     }
 
@@ -21,11 +22,17 @@ function build() {
     }
     encodedParams.append("language", language);
 
+    //Handling Inputs
+    input = document.getElementById("inp1").value;
+    if(input!==""){
+        encodedParams.append("input", input);
+    }
+
     const options = {
         method: 'POST',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': '',
+            'X-RapidAPI-Key': '7f5ebdc991msh779918a8b5d23a9p10d434jsne9e7e4a1586e',
             'X-RapidAPI-Host': 'codex7.p.rapidapi.com'
         },
         body: encodedParams

@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Compiler on the Web</title>
 </head>
 <script src="API-Handler.js"></script>
-<body>
-<H1>Code To Be Compiled</H1>
+<body onload="select()">
+<H1>Web Compiler</H1>
 <label for="code"></label><textarea id="code" style="width: 700px; height: 300px; resize: none;"></textarea>
 <div style="position: absolute; left: 514px;">
     <button onclick="build()" style="height: 35px; width: 200px;">Compile</button>
@@ -27,6 +27,7 @@
         <option value="cs">C#</option>
         <option value="js">NodeJS</option>
     </select>
+    <p>Inputs:</p><label for="inp1"></label><input id="inp1">
 </div>
 <br>
 <H1 style="display: inline;">Code Output: </H1><p id="outputDisplay" style="display: inline;"></p>
